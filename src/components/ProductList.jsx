@@ -14,7 +14,7 @@ function ProductList({selectedCategory, addToCart}) {
         if (selectedCategory === 'all') {
           return true;
         } else {
-          return product.category.toLowerCase() === selectedCategory.toLowerCase();
+          return product.category?.toLowerCase() === selectedCategory.toLowerCase();
         }
       });
     
@@ -22,7 +22,9 @@ function ProductList({selectedCategory, addToCart}) {
         return (
         <div>
           <h2>Available Products</h2>
-          <p>No products available in this category.</p>
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
+          ))}
         </div>
       )};
 };
