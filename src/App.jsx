@@ -22,7 +22,7 @@ const App = () => {
       </p>
 
       {/* TODO: Render DarkModeToggle and implement dark mode functionality */}
-      <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+      <DarkModeToggle isDark={darkMode} onToggle={() => setDarkMode(!darkMode)} />
 
       {/* TODO: Implement category filter dropdown */}
       <label>Filter by Category: </label>
@@ -37,7 +37,7 @@ const App = () => {
       <ProductList />
 
       {/* TODO: Implement and render Cart component */}
-      <Cart cart={cart} setCart={setCart} />
+      <Cart cartItems={cart} />
     </div>
   );
 }
