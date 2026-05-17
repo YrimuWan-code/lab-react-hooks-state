@@ -19,7 +19,7 @@ const App = () => {
     setCart([...cart, product])
   }
   return (
-    <div>
+    <div style ={{ background: darkMode ? '#333' : '#fff', color: darkMode ? '#fff' : '#333' }}>
       <h1>🛒 Shopping App</h1>
       <p>
         Welcome! Your task is to implement filtering, cart management, and dark
@@ -29,6 +29,8 @@ const App = () => {
       {/* TODO: Render DarkModeToggle and implement dark mode functionality */}
       <DarkModeToggle isDark={darkMode} onToggle={() => setDarkMode(!darkMode)} />
 
+        <br /><br />
+
       {/* TODO: Implement category filter dropdown */}
       <label htmlFor="category-filter">Filter by Category: </label>
       
@@ -37,9 +39,10 @@ const App = () => {
         <option value="all">All</option>
         <option value="Fruits">Fruits</option>
         <option value="Dairy">Dairy</option>
+        <option value="NonExistent">Non-Existent Category</option>
       </select>
 
-      <ProductList addToCart={addToCart} />
+      <ProductList selectedCategory={selectedCategory} addToCart={addToCart} />
 
       {/* TODO: Implement and render Cart component */}
       <Cart cartItems={cart} />
