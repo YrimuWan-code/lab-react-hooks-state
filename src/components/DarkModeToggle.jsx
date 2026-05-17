@@ -8,7 +8,7 @@ const DarkModeToggle = ({ isDark, onToggle }) => {
     <button onClick={onToggle}>
       {/* Change button text based on dark mode state */}
 
-      {isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      Toggle {isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     </button>
   );
 };

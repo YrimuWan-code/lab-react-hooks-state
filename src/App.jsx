@@ -30,9 +30,9 @@ const App = () => {
       <DarkModeToggle isDark={darkMode} onToggle={() => setDarkMode(!darkMode)} />
 
       {/* TODO: Implement category filter dropdown */}
-      <label>Filter by Category: </label>
+      <label htmlFor="category-filter">Filter by Category: </label>
       
-      <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+      <select id="category-filter" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
 
         <option value="all">All</option>
         <option value="Fruits">Fruits</option>
