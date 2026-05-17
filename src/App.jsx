@@ -13,6 +13,11 @@ const App = () => {
 
   // TODO: Implement state for category filtering
   const [selectedCategory, setSelectedCategory] = useState('all')
+
+  //Add to cart function
+  const addToCart = (product) => {
+    setCart([...cart, product])
+  }
   return (
     <div>
       <h1>🛒 Shopping App</h1>
@@ -34,7 +39,7 @@ const App = () => {
         <option value="Dairy">Dairy</option>
       </select>
 
-      <ProductList />
+      <ProductList addToCart={addToCart} />
 
       {/* TODO: Implement and render Cart component */}
       <Cart cartItems={cart} />
